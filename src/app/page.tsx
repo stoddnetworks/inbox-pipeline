@@ -7,8 +7,10 @@ import { isSupabaseConfigured, supabase } from '@/lib/supabase';
 import {
   Inbox, Sparkles, ArrowRight, Mail, Zap, CheckCircle2, Clock,
   Filter, Send, Eye, LayoutGrid, AlertTriangle,
-  Building, DollarSign, MapPin, Shield, Code,
+  Building, DollarSign, MapPin, Code,
 } from 'lucide-react';
+import MorningComparison from '@/components/MorningComparison';
+import LeadShowcase from '@/components/LeadShowcase';
 
 export default function LandingPage() {
   const router = useRouter();
@@ -162,6 +164,9 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* MORNING COMPARISON (scroll-driven) */}
+      <MorningComparison />
+
       {/* HOW IT WORKS */}
       <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-6xl px-4">
@@ -197,6 +202,9 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
+
+      {/* LEAD SHOWCASE (rotating ICP cards) */}
+      <LeadShowcase />
 
       {/* FEATURES */}
       <section className="border-y border-zinc-100 bg-zinc-50/60 py-16 sm:py-20">

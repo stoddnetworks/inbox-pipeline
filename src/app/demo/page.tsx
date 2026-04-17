@@ -9,7 +9,7 @@ import KanbanBoard from '@/components/KanbanBoard';
 import LeadDetail from '@/components/LeadDetail';
 import DemoBanner from '@/components/DemoBanner';
 import Toast from '@/components/Toast';
-import { Inbox, RefreshCw, Filter, LogIn } from 'lucide-react';
+import { Inbox, RefreshCw, Filter, LogIn, Sparkles } from 'lucide-react';
 
 export default function DemoPage() {
   const [leads, setLeads] = useState<LeadWithDraft[]>(DEMO_LEADS);
