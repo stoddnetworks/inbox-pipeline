@@ -21,7 +21,7 @@ export default function DemoBanner() {
         </div>
         <div className="flex items-center gap-3 text-sm">
           <a
-            href="https://github.com/"
+            href="https://github.com/stoddnetworks/inbox-pipeline"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-zinc-600 hover:text-zinc-900 transition-colors"
