@@ -137,7 +137,7 @@ export default function LoginPage() {
             className="inline-flex items-center gap-1.5 rounded-lg border border-zinc-200 bg-white px-3.5 py-1.5 text-sm font-medium text-zinc-700 hover:bg-zinc-50 hover:border-zinc-300 transition-colors"
           >
             <Sparkles className="h-3.5 w-3.5 text-blue-600" />
-            Try the demo — no signup
+            Try the demo, no signup
           </Link>
         </div>
       </div>

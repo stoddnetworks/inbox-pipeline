@@ -112,7 +112,7 @@ export default function LeadDetail({
           {lead.needs_review && (
             <div className="flex items-center gap-2 rounded-md bg-amber-50 border border-amber-200 px-3 py-2">
               <AlertTriangle className="h-4 w-4 text-amber-600" />
-              <span className="text-sm text-amber-800">Needs review — AI confidence was low for this lead</span>
+              <span className="text-sm text-amber-800">Needs review. AI confidence was low for this lead.</span>
             </div>
           )}
 
@@ -147,7 +147,7 @@ export default function LeadDetail({
               <h3 className="text-sm font-medium text-zinc-900 mb-1">
                 Original Email
                 {lead.original_email_subject && (
-                  <span className="ml-2 font-normal text-zinc-500">— {lead.original_email_subject}</span>
+                  <span className="ml-2 font-normal text-zinc-500">· {lead.original_email_subject}</span>
                 )}
               </h3>
               <div className="max-h-48 overflow-y-auto rounded-md border border-zinc-200 bg-zinc-50 p-3">
@@ -214,7 +214,7 @@ export default function LeadDetail({
           {/* Received timestamp */}
           {lead.received_at && (
             <p className="text-xs text-zinc-400">
-              Received {formatDistanceToNow(new Date(lead.received_at), { addSuffix: true })} — {format(new Date(lead.received_at), 'PPp')}
+              Received {formatDistanceToNow(new Date(lead.received_at), { addSuffix: true })} · {format(new Date(lead.received_at), 'PPp')}
             </p>
           )}
         </div>

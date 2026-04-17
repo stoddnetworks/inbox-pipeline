@@ -180,7 +180,7 @@ export default function DashboardPage() {
             <h1 className="text-lg font-semibold text-zinc-900">Pipeline</h1>
             <p className="text-sm text-zinc-500">
               {leads.length === 0
-                ? 'No leads yet — sync your Gmail to get started'
+                ? 'No leads yet. Sync your Gmail to get started.'
                 : `${leads.length} lead${leads.length !== 1 ? 's' : ''} in your pipeline`}
             </p>
           </div>

@@ -32,14 +32,14 @@ Body:
 ${truncatedBody}
 
 Classify as exactly one of:
-- "business_enquiry" — someone reaching out about hiring, buying a service, or working together
-- "existing_client" — an ongoing conversation with someone already working with the recipient
-- "newsletter" — marketing email, newsletter, or promotional content
-- "spam" — spam, scam, or irrelevant automated email
+- "business_enquiry": someone reaching out about hiring, buying a service, or working together
+- "existing_client": an ongoing conversation with someone already working with the recipient
+- "newsletter": marketing email, newsletter, or promotional content
+- "spam": spam, scam, or irrelevant automated email
 
 Rules:
 - If confidence is below 0.6, classify as "needs_review" instead
-- Be conservative — when in doubt, use "needs_review"
+- Be conservative. When in doubt, use "needs_review".
 
 Respond with JSON:
 {"classification": "...", "confidence": 0.0-1.0, "reason": "one line explanation"}`,
@@ -142,7 +142,7 @@ export async function draftReply(
     messages: [
       {
         role: 'user',
-        content: `Draft a reply to this business enquiry. Output ONLY the email body text — no subject line, no "Subject:" prefix, no JSON wrapping.
+        content: `Draft a reply to this business enquiry. Output ONLY the email body text. No subject line, no "Subject:" prefix, no JSON wrapping.
 
 Enquiry from: ${senderName}
 Subject: ${originalSubject}
@@ -156,7 +156,8 @@ Rules:
 - Acknowledge their specific need
 - Express interest in helping
 - Suggest a next step (call, meeting, or more details)
-- Keep it short — 3-5 sentences max
+- Keep it short, 3 to 5 sentences max
+- Avoid em dashes. Use periods, commas, or parentheses instead.
 - Sound like a real human, not a template
 - Do not include a subject line
 - Start directly with the greeting`,

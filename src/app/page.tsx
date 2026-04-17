@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import { isSupabaseConfigured, supabase } from '@/lib/supabase';
 import {
   Inbox, Sparkles, ArrowRight, Mail, Zap, CheckCircle2, Clock,
-  Filter, Send, Eye, LayoutGrid, AlertTriangle, MoveRight,
+  Filter, Send, Eye, LayoutGrid, AlertTriangle,
   Building, DollarSign, MapPin,
 } from 'lucide-react';
 
@@ -33,7 +33,7 @@ export default function LandingPage() {
       <div className="flex min-h-screen items-center justify-center">
         <div className="flex items-center gap-2 text-zinc-400">
           <Inbox className="h-5 w-5 animate-pulse" />
-          <span className="text-sm">Loading...</span>
+          <span className="text-sm">Loading</span>
         </div>
       </div>
     );
@@ -41,7 +41,7 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-screen bg-white text-zinc-900">
-      {/* ───── NAV ───── */}
+      {/* NAV */}
       <nav className="sticky top-0 z-40 border-b border-zinc-200/80 bg-white/85 backdrop-blur">
         <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4">
           <div className="flex items-center gap-2">
@@ -69,25 +69,26 @@ export default function LandingPage() {
         </div>
       </nav>
 
-      {/* ───── HERO ───── */}
+      {/* HERO */}
       <section className="relative overflow-hidden">
-        {/* Soft background gradient */}
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-blue-50/40 via-white to-white" />
         <div className="pointer-events-none absolute -top-24 left-1/2 h-[500px] w-[900px] -translate-x-1/2 rounded-full bg-gradient-to-br from-blue-200/30 via-transparent to-transparent blur-3xl" />
 
         <div className="relative mx-auto max-w-6xl px-4 pt-16 pb-12 sm:pt-24 sm:pb-16">
           <div className="mx-auto max-w-3xl text-center">
-            <div className="inline-flex items-center gap-1.5 rounded-full border border-zinc-200 bg-white px-3 py-1 text-xs font-medium text-zinc-600 shadow-sm">
+            <div className="inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white px-3 py-1 text-xs font-medium text-zinc-600 shadow-sm">
               <span className="flex h-1.5 w-1.5 rounded-full bg-green-500" />
-              Free · Open source · Works with your Gmail
+              Free. Open source. Works with your Gmail.
             </div>
             <h1 className="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
-              Your inbox is <span className="bg-gradient-to-br from-zinc-900 via-zinc-700 to-zinc-500 bg-clip-text text-transparent">killing your pipeline.</span>
+              Your inbox is killing <br className="hidden sm:block" />
+              <span className="bg-gradient-to-br from-zinc-900 via-zinc-700 to-zinc-500 bg-clip-text text-transparent">
+                your pipeline.
+              </span>
             </h1>
-            <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-zinc-600 sm:text-lg">
-              Real enquiries get buried. Replies drag on for days. Leads go cold.
-              Inbox Pipeline reads every new email, spots the real ones, pulls out the
-              details, and drafts your reply — before you&apos;ve finished your coffee.
+            <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-zinc-600 sm:text-lg">
+              Real enquiries get buried under newsletters and noise. By the time you reply, they&apos;ve hired someone else.
+              Inbox Pipeline fixes that in about ten minutes.
             </p>
             <div className="mt-7 flex flex-col items-center justify-center gap-2 sm:flex-row">
               <Link
@@ -95,7 +96,7 @@ export default function LandingPage() {
                 className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-lg bg-zinc-900 px-5 py-2.5 text-sm font-medium text-white hover:bg-zinc-800 transition-colors"
               >
                 <Sparkles className="h-4 w-4" />
-                Try the live demo
+                See it in action
               </Link>
               <Link
                 href="/login"
@@ -106,18 +107,25 @@ export default function LandingPage() {
               </Link>
             </div>
             <p className="mt-4 text-xs text-zinc-400">
-              No credit card. No monthly fee. You stay in control of every reply.
+              No credit card. No subscription. You approve every reply.
             </p>
           </div>
 
-          {/* Hero visual: email → lead card transformation */}
+          {/* Hero visual */}
           <div className="mx-auto mt-12 max-w-5xl">
             <HeroVisual />
+          </div>
+
+          {/* Quick proof strip */}
+          <div className="mx-auto mt-10 grid max-w-4xl grid-cols-1 gap-3 sm:grid-cols-3">
+            <Proof label="Setup time" value="~10 min" />
+            <Proof label="You approve every send" value="100%" />
+            <Proof label="What it costs" value="£0" />
           </div>
         </div>
       </section>
 
-      {/* ───── THE PROBLEM ───── */}
+      {/* PROBLEM */}
       <section className="border-t border-zinc-100 bg-zinc-50/60 py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-4">
           <div className="mx-auto max-w-2xl text-center">
@@ -125,8 +133,7 @@ export default function LandingPage() {
               You didn&apos;t start freelancing to triage email.
             </h2>
             <p className="mt-3 text-zinc-600">
-              If you run a solo service business, your pipeline lives in your inbox —
-              and that&apos;s the problem.
+              If your pipeline lives in your inbox, you already have a pipeline problem.
             </p>
           </div>
 
@@ -134,27 +141,27 @@ export default function LandingPage() {
             <PainCard
               icon={Mail}
               title="Enquiries get buried"
-              body="Real leads sit next to newsletters, invoices, and cold outreach. You'll get to them. Eventually."
+              body="Real leads sit next to newsletters, invoices, and cold outreach. You&apos;ll get to them. Eventually."
             />
             <PainCard
               icon={Clock}
               title="Good leads go cold"
-              body="By the time you draft a proper reply three days later, they've booked someone else."
+              body="The email you meant to reply to on Tuesday is still sitting there on Friday. By Monday they&apos;ve gone with someone else."
             />
             <PainCard
               icon={LayoutGrid}
-              title="CRMs feel like overkill"
-              body="You tried HubSpot for a week. Pipedrive for a day. You're a team of one — you need less, not more."
+              title="Most tools are overkill"
+              body="You tried HubSpot for a week. Pipedrive for a day. You&apos;re a team of one. You need less, not more."
             />
           </div>
         </div>
       </section>
 
-      {/* ───── HOW IT WORKS ───── */}
+      {/* HOW IT WORKS */}
       <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-6xl px-4">
           <div className="mx-auto max-w-2xl text-center">
-            <p className="text-xs font-medium uppercase tracking-wider text-blue-600">
+            <p className="text-xs font-medium uppercase tracking-[0.15em] text-blue-600">
               How it works
             </p>
             <h2 className="mt-2 text-2xl font-semibold tracking-tight sm:text-3xl">
@@ -165,83 +172,83 @@ export default function LandingPage() {
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             <StepCard
               number="01"
-              title="Connect your Gmail"
-              body="One OAuth click. Read-only for your inbox, send-access for your replies. That's it."
+              title="Connect Gmail"
+              body="One OAuth click. Read your inbox, send your replies. Ten minutes, done."
               icon={Mail}
             />
             <StepCard
               number="02"
-              title="AI sorts the signal from the noise"
-              body="Classifies every email. Spots real enquiries. Extracts name, company, budget, urgency, location. Drafts a reply in your tone."
+              title="AI does the sorting"
+              body="Every email gets classified. Real enquiries get name, company, budget, urgency, and location pulled out. A reply gets drafted in your voice."
               icon={Zap}
               highlight
             />
             <StepCard
               number="03"
-              title="Review and send"
-              body="Every draft lands in a clean kanban board. Edit if you want. Send in one click. Move cards through New → Replied → Booked."
+              title="You hit send"
+              body="Every draft lands in a clean kanban board. Edit, ignore, or send in one click. Nothing goes out without you."
               icon={Send}
             />
           </div>
         </div>
       </section>
 
-      {/* ───── FEATURES ───── */}
+      {/* FEATURES */}
       <section className="border-y border-zinc-100 bg-zinc-50/60 py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-4">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-              Everything you need. Nothing you don&apos;t.
+              Built for solo operators.
             </h2>
             <p className="mt-3 text-zinc-600">
-              This isn&apos;t a CRM. It&apos;s your inbox, with an AI that actually helps.
+              No team settings. No custom pipelines. No billing dashboard you&apos;ll never open.
             </p>
           </div>
 
           <div className="mx-auto mt-10 grid max-w-5xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
             <Feature
               icon={Filter}
-              title="Real classification"
-              body="Tells a genuine sales enquiry apart from newsletters, client ops, and noise."
+              title="Classification that works"
+              body="Tells a genuine sales enquiry apart from newsletters, client ops, and cold pitches."
             />
             <Feature
               icon={CheckCircle2}
-              title="Structured leads"
-              body="Auto-extracts name, company, service, urgency, budget hints, and location."
+              title="Structured lead details"
+              body="Name, company, service, urgency, budget, location. Pulled out of the email for you."
             />
             <Feature
               icon={Send}
-              title="AI-drafted replies"
-              body="Warm, specific, and in your tone. You edit and send — never auto-sent."
+              title="Replies you&apos;d actually send"
+              body="Warm, specific, and in your tone. Edit anything before sending."
             />
             <Feature
               icon={LayoutGrid}
-              title="Simple kanban"
-              body="New, Replied, Booked, Lost. Four columns. Your whole pipeline at a glance."
+              title="Four columns, that&apos;s it"
+              body="New, Replied, Booked, Lost. Your whole pipeline at a glance. That&apos;s the CRM."
             />
             <Feature
               icon={AlertTriangle}
-              title="Conservative AI"
-              body="Ambiguous emails get flagged as 'Needs Review' instead of miscategorised."
+              title="Cautious when it should be"
+              body="Ambiguous emails get flagged for review instead of being misclassified."
             />
             <Feature
               icon={Eye}
               title="You stay in control"
-              body="Review every draft. Edit every reply. AI never clicks Send for you."
+              body="AI never hits send. Every reply passes through you first."
             />
           </div>
         </div>
       </section>
 
-      {/* ───── WHO IT'S FOR ───── */}
+      {/* WHO IT'S FOR */}
       <section className="py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-4">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-              Built for people like you.
+              If you run a team of one, this is for you.
             </h2>
             <p className="mt-3 text-zinc-600">
-              Solo operators who make their living from inbound enquiries. If you see yourself here, Inbox Pipeline was made for you.
+              Inbox Pipeline is built for solo service businesses whose next client is sitting in their inbox right now.
             </p>
           </div>
 
@@ -269,7 +276,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ───── FINAL CTA ───── */}
+      {/* FINAL CTA */}
       <section className="relative overflow-hidden border-t border-zinc-100 bg-zinc-900 py-20 text-white">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(96,165,250,0.15),transparent_60%)]" />
         <div className="relative mx-auto max-w-3xl px-4 text-center">
@@ -277,7 +284,7 @@ export default function LandingPage() {
             Your next client is already in your inbox.
           </h2>
           <p className="mt-4 text-zinc-300">
-            Don&apos;t let them wait. Try the live demo — no signup, no credit card — and see exactly what Inbox Pipeline will do for your real Gmail.
+            Don&apos;t make them wait. Try the demo with sample data, then hook up your Gmail and watch it work on your real inbox.
           </p>
           <div className="mt-7 flex flex-col items-center justify-center gap-2 sm:flex-row">
             <Link
@@ -285,7 +292,7 @@ export default function LandingPage() {
               className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-lg bg-white px-5 py-2.5 text-sm font-medium text-zinc-900 hover:bg-zinc-100 transition-colors"
             >
               <Sparkles className="h-4 w-4 text-blue-600" />
-              Try the live demo
+              See it in action
             </Link>
             <Link
               href="/login"
@@ -298,7 +305,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ───── FOOTER ───── */}
+      {/* FOOTER */}
       <footer className="border-t border-zinc-200 bg-white py-8">
         <div className="mx-auto flex max-w-6xl flex-col items-center gap-2 px-4 text-sm text-zinc-500 sm:flex-row sm:justify-between">
           <div className="flex items-center gap-1.5">
@@ -306,7 +313,7 @@ export default function LandingPage() {
             <span>Inbox Pipeline</span>
           </div>
           <p>
-            Built for solo operators who have better things to do than triage email.
+            For solo operators who have better things to do than triage email.
           </p>
         </div>
       </footer>
@@ -314,16 +321,14 @@ export default function LandingPage() {
   );
 }
 
-// ─────────────────────────────────────────────────────────────
-// Sub-components
-// ─────────────────────────────────────────────────────────────
+// ─── Sub-components ───────────────────────────────────────────
 
 function HeroVisual() {
   return (
     <div className="relative rounded-2xl border border-zinc-200 bg-white p-4 shadow-xl shadow-zinc-900/5 sm:p-6">
-      <div className="grid gap-4 sm:grid-cols-[1fr_auto_1fr] sm:items-center">
+      <div className="grid gap-4 sm:grid-cols-[1fr_auto_1fr] sm:items-stretch">
         {/* Left: raw email */}
-        <div className="rounded-lg border border-zinc-200 bg-zinc-50 p-4">
+        <div className="flex flex-col rounded-lg border border-zinc-200 bg-zinc-50 p-4">
           <div className="flex items-center gap-2 border-b border-zinc-200 pb-2 text-xs text-zinc-500">
             <Mail className="h-3.5 w-3.5" />
             <span className="font-medium">Inbox</span>
@@ -331,24 +336,26 @@ function HeroVisual() {
           </div>
           <div className="mt-3 space-y-1 text-xs">
             <p className="font-medium text-zinc-900">Marcus Wright &lt;marcus@westbayventures.com&gt;</p>
-            <p className="font-semibold text-zinc-800">Rebrand engagement — need to move quickly</p>
+            <p className="font-semibold text-zinc-800">Rebrand engagement, need to move quickly</p>
           </div>
           <p className="mt-3 text-xs leading-relaxed text-zinc-600">
-            Hi there, we were introduced by Alex from Meridian — she spoke very highly of your work. I&apos;m the CEO at West Bay Ventures (Series B fintech, 60 people). We&apos;ve outgrown our current identity and are launching a new product in 8 weeks. We need a full rebrand...
+            Hi there, we were introduced by Alex from Meridian. She spoke very highly of your work. I&apos;m the CEO at West Bay Ventures (Series B fintech, 60 people). We&apos;ve outgrown our current identity and are launching a new product in 8 weeks. We need a full rebrand...
+          </p>
+          <p className="mt-auto pt-3 text-[10px] text-zinc-400">
+            Buried under 47 other emails.
           </p>
         </div>
 
-        {/* Arrow */}
-        <div className="flex items-center justify-center sm:flex-col">
-          <div className="flex items-center gap-2 rounded-full border border-zinc-200 bg-white px-3 py-1.5 shadow-sm">
+        {/* Divider / AI badge */}
+        <div className="flex items-center justify-center sm:flex-col sm:justify-center">
+          <div className="flex items-center gap-1.5 rounded-full border border-zinc-200 bg-white px-3 py-1.5 shadow-sm">
             <Sparkles className="h-3.5 w-3.5 text-blue-600" />
-            <span className="text-xs font-medium text-zinc-700">AI</span>
+            <span className="text-xs font-medium text-zinc-700">Claude</span>
           </div>
-          <MoveRight className="mx-2 h-5 w-5 text-zinc-300 sm:mx-0 sm:my-2 sm:rotate-90" />
         </div>
 
         {/* Right: extracted lead card */}
-        <div className="rounded-lg border border-zinc-200 bg-white p-4 shadow-sm">
+        <div className="flex flex-col rounded-lg border border-zinc-200 bg-white p-4 shadow-sm">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm font-semibold text-zinc-900">Marcus Wright</p>
@@ -359,34 +366,45 @@ function HeroVisual() {
             </span>
           </div>
 
-          <p className="mt-2.5 text-xs font-medium text-zinc-800">Brand strategy + full rebrand</p>
+          <p className="mt-2.5 text-xs font-medium text-zinc-800">
+            Brand strategy + full rebrand
+          </p>
 
           <div className="mt-2 flex flex-wrap gap-1.5">
             <Tag icon={Building}>Series B fintech</Tag>
-            <Tag icon={DollarSign}>premium</Tag>
+            <Tag icon={DollarSign}>Premium</Tag>
             <Tag icon={MapPin}>London</Tag>
             <Tag icon={Clock}>8-week launch</Tag>
           </div>
 
           <div className="mt-3 rounded-md border border-blue-100 bg-blue-50/50 p-2.5">
-            <div className="flex items-center gap-1 text-[10px] font-medium uppercase tracking-wider text-blue-700">
+            <div className="flex items-center gap-1 text-[10px] font-medium uppercase tracking-[0.08em] text-blue-700">
               <Sparkles className="h-2.5 w-2.5" />
               Drafted reply
             </div>
             <p className="mt-1 text-xs leading-relaxed text-zinc-700">
-              Hi Marcus, thanks for reaching out — and please pass my thanks to Alex. 8 weeks is tight but doable...
+              Hi Marcus, thanks for reaching out, and please pass my thanks to Alex. 8 weeks is tight but doable for a focused engagement...
             </p>
           </div>
 
-          <div className="mt-3 flex items-center gap-2">
+          <div className="mt-3 flex items-center justify-between">
             <button className="pointer-events-none inline-flex items-center gap-1 rounded-md bg-blue-600 px-2 py-1 text-[10px] font-medium text-white">
               <Send className="h-2.5 w-2.5" />
-              Send
+              Send reply
             </button>
             <span className="text-[10px] text-zinc-400">98% confidence</span>
           </div>
         </div>
       </div>
+    </div>
+  );
+}
+
+function Proof({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="rounded-lg border border-zinc-200 bg-white px-4 py-3 text-center shadow-sm">
+      <p className="text-lg font-semibold tracking-tight text-zinc-900">{value}</p>
+      <p className="mt-0.5 text-xs text-zinc-500">{label}</p>
     </div>
   );
 }

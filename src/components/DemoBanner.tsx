@@ -12,10 +12,10 @@ export default function DemoBanner() {
             <Sparkles className="h-3.5 w-3.5 text-blue-600" />
           </div>
           <p className="text-sm text-zinc-700">
-            <span className="font-medium text-zinc-900">Demo mode</span>
+            <span className="font-medium text-zinc-900">Demo mode.</span>
             <span className="hidden text-zinc-500 sm:inline">
               {' '}
-              — exploring with sample data. All interactions work but nothing is sent.
+              Every interaction works. Nothing actually gets sent.
             </span>
           </p>
         </div>

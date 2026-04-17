@@ -68,7 +68,7 @@ export default function DemoPage() {
         drafted_replies: updatedDrafts,
         lead_events: [
           ...(l.lead_events || []),
-          appendEvent(l, 'reply_sent', 'Reply sent (demo — nothing actually sent)'),
+          appendEvent(l, 'reply_sent', 'Reply sent (demo, nothing actually sent)'),
         ],
       };
     });
@@ -118,7 +118,7 @@ export default function DemoPage() {
     await new Promise(r => setTimeout(r, 900));
     setSyncing(false);
     setToast({
-      message: 'Demo mode — connect your Gmail to sync real emails',
+      message: 'Demo mode. Connect your Gmail to sync real emails.',
       type: 'info',
     });
   };
@@ -127,7 +127,7 @@ export default function DemoPage() {
     <div className="min-h-screen bg-zinc-50">
       <DemoBanner />
 
-      {/* Simplified header for demo — no auth */}
+      {/* Simplified header for demo (no auth) */}
       <header className="border-b border-zinc-200 bg-white">
         <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-4">
           <div className="flex items-center gap-2">
@@ -150,7 +150,7 @@ export default function DemoPage() {
           <div>
             <h1 className="text-lg font-semibold text-zinc-900">Pipeline</h1>
             <p className="text-sm text-zinc-500">
-              {leads.length} sample leads showing how real enquiries flow through your inbox
+              {leads.length} sample leads. Click any card to see the extracted details and drafted reply.
             </p>
           </div>
           <button
@@ -204,16 +204,16 @@ export default function DemoPage() {
 
         {/* Footer CTA */}
         <div className="mt-10 rounded-xl border border-zinc-200 bg-white p-6 text-center">
-          <h2 className="text-base font-semibold text-zinc-900">Like what you see?</h2>
+          <h2 className="text-base font-semibold text-zinc-900">This but on your actual inbox.</h2>
           <p className="mt-1 text-sm text-zinc-500 max-w-md mx-auto">
-            Run this on your own Gmail to turn real enquiries into a real pipeline. Free and open source.
+            Hook up Gmail, click sync, and real enquiries land in the kanban in under a minute. Free and open source.
           </p>
           <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
             <Link
               href="/login"
               className="inline-flex items-center gap-1.5 rounded-lg bg-zinc-900 px-4 py-2 text-sm font-medium text-white hover:bg-zinc-800 transition-colors"
             >
-              Get started
+              Set up with my Gmail
             </Link>
             <a
               href="https://github.com/stoddnetworks/inbox-pipeline"
