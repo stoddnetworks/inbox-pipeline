@@ -80,7 +80,7 @@ export default function LandingPage() {
           <div className="mx-auto max-w-3xl text-center">
             <div className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-white px-3 py-1 text-xs font-medium text-indigo-700 shadow-sm">
               <span className="flex h-1.5 w-1.5 rounded-full bg-indigo-500" />
-              Open source. Self-hosted. Runs on your own Gmail.
+              Open source. Self-hosted. Runs on your Gmail.
             </div>
             <h1 className="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
               Your inbox is killing <br className="hidden sm:block" />
@@ -89,8 +89,8 @@ export default function LandingPage() {
               </span>
             </h1>
             <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-zinc-600 sm:text-lg">
-              Real enquiries get buried under newsletters and noise. By the time you reply,
-              they&apos;ve hired someone else. Inbox Pipeline fixes that in about ten minutes.
+              Real enquiries get buried under newsletters. By the time you reply, they&apos;ve
+              hired someone else. Inbox Pipeline fixes that in ten minutes.
             </p>
             <div className="mt-7 flex flex-col items-center justify-center gap-2 sm:flex-row">
               <Link
@@ -109,7 +109,7 @@ export default function LandingPage() {
               </Link>
             </div>
             <p className="mt-4 text-xs text-zinc-400">
-              Bring your own Supabase, Claude, and Gmail keys. You approve every reply.
+              Bring your own Supabase, Claude, and Gmail keys. You approve every send.
             </p>
           </div>
 
@@ -120,7 +120,7 @@ export default function LandingPage() {
 
           {/* Proof strip */}
           <div className="mx-auto mt-10 grid max-w-4xl grid-cols-1 gap-3 sm:grid-cols-3">
-            <Proof label="Setup time" value="~10 min" />
+            <Proof label="Setup time" value="10 min" />
             <Proof label="You approve every send" value="100%" />
             <Proof label="Your data stays with you" value="Self-hosted" />
           </div>
@@ -139,8 +139,7 @@ export default function LandingPage() {
             </h2>
             <p className="mt-3 text-zinc-600">
               You&apos;re a photographer, consultant, designer, coach, or small-agency owner.
-              You don&apos;t have a sales team. You have a laptop, a client list, and an inbox
-              that&apos;s slowly eating your week.
+              No sales team. A laptop, a client list, and an inbox eating your week.
             </p>
           </div>
 
@@ -148,12 +147,12 @@ export default function LandingPage() {
             <PainCard
               icon={Mail}
               title="Enquiries get buried"
-              body="Real leads sit next to invoices, newsletters, and cold outreach. You&apos;ll get to them. Eventually."
+              body="Real leads sit next to invoices and cold outreach. You&apos;ll get to them. Eventually."
             />
             <PainCard
               icon={Clock}
               title="Good leads go cold"
-              body="The email you meant to reply to on Tuesday is still sitting there on Friday. By Monday they&apos;ve hired someone else."
+              body="Tuesday&apos;s email is still sitting there on Friday. By Monday they&apos;ve hired someone else."
             />
             <PainCard
               icon={LayoutGrid}
@@ -183,20 +182,20 @@ export default function LandingPage() {
             <StepCard
               number="01"
               title="Connect Gmail"
-              body="One OAuth click. Read your inbox, send your replies. Ten minutes and you&apos;re running."
+              body="One OAuth click. Ten minutes and you&apos;re running."
               icon={Mail}
             />
             <StepCard
               number="02"
               title="AI does the sorting"
-              body="Every email gets classified. Real enquiries get name, company, budget, urgency, and location pulled out. A reply gets drafted in your voice."
+              body="Every email gets classified. Real enquiries get name, company, budget, urgency, and location extracted. A reply drafted in your voice."
               icon={Zap}
               highlight
             />
             <StepCard
               number="03"
               title="You hit send"
-              body="Drafts land in a clean kanban. Edit, ignore, or send in one click. Nothing goes out without you."
+              body="Drafts land in a clean kanban. Edit, ignore, or send in one click. Nothing sends without you."
               icon={Send}
             />
           </div>
@@ -222,12 +221,12 @@ export default function LandingPage() {
             <Feature
               icon={Filter}
               title="Classification that works"
-              body="Tells a genuine sales enquiry apart from newsletters, client ops, and cold pitches."
+              body="Tells a sales enquiry apart from newsletters, client ops, and cold pitches."
             />
             <Feature
               icon={CheckCircle2}
               title="Structured lead details"
-              body="Name, company, service, urgency, budget, location. Pulled out of the email for you."
+              body="Name, company, service, urgency, budget, location. Pulled from the email."
             />
             <Feature
               icon={Send}
@@ -237,17 +236,17 @@ export default function LandingPage() {
             <Feature
               icon={LayoutGrid}
               title="Four columns, that&apos;s it"
-              body="New, Replied, Booked, Lost. Your whole pipeline at a glance. That&apos;s the CRM."
+              body="New, Replied, Booked, Lost. Your pipeline at a glance. That&apos;s the CRM."
             />
             <Feature
               icon={AlertTriangle}
               title="Cautious when it should be"
-              body="Ambiguous emails get flagged for review instead of being misclassified."
+              body="Ambiguous emails get flagged for review, not misclassified."
             />
             <Feature
               icon={Eye}
               title="You stay in control"
-              body="AI never hits send. Every reply passes through you first."
+              body="AI never hits send. Every reply passes through you."
             />
           </div>
         </div>
@@ -264,7 +263,7 @@ export default function LandingPage() {
               Open source. You pay nothing to us.
             </h2>
             <p className="mt-3 text-zinc-600">
-              There&apos;s no subscription because there&apos;s no service company. You host it. You run it.
+              No subscription. You host it. You run it.
             </p>
           </div>
 
@@ -276,7 +275,7 @@ export default function LandingPage() {
               <div>
                 <h3 className="text-lg font-semibold text-zinc-900">Self-hosted. Bring your own keys.</h3>
                 <p className="mt-1 text-sm text-zinc-600">
-                  Clone the repo, plug in three API keys, and you&apos;re running. Your data stays in your accounts.
+                  Clone the repo, plug in three API keys, run it. Your data stays in your accounts.
                 </p>
               </div>
             </div>
@@ -284,13 +283,12 @@ export default function LandingPage() {
             <div className="mt-6 grid gap-3 sm:grid-cols-3">
               <CostRow label="Vercel (hosting)" cost="Free tier" note="Hobby plan covers solo use" />
               <CostRow label="Supabase (database)" cost="Free tier" note="500MB + 50k users" />
-              <CostRow label="Claude API (the brain)" cost="~£2 to £8/mo" note="Based on your inbox volume" />
+              <CostRow label="Claude API (the brain)" cost="£2 to £8/mo" note="Based on your inbox volume" />
             </div>
 
             <p className="mt-6 text-sm leading-relaxed text-zinc-500">
-              Real math: if you get 20 business enquiries a month, Claude classification and drafting
-              costs you under a pound. Heavy inboxes with 200+ enquiries land around £8. You only pay
-              for what you actually use, directly to the provider.
+              20 enquiries a month costs under £1 in Claude usage. 200+ lands around £8.
+              You pay the providers directly, only for what you use.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-2">
@@ -323,8 +321,7 @@ export default function LandingPage() {
             Your next client is already in your inbox.
           </h2>
           <p className="mt-4 text-zinc-300">
-            Don&apos;t make them wait. Try the demo with sample data, then hook up Gmail and watch it
-            work on your real enquiries.
+            Don&apos;t make them wait. Try the demo, then hook up Gmail and watch it work on your real enquiries.
           </p>
           <div className="mt-7 flex flex-col items-center justify-center gap-2 sm:flex-row">
             <Link
@@ -391,9 +388,9 @@ function HeroVisual() {
             <p className="font-semibold text-zinc-800">Rebrand engagement, need to move quickly</p>
           </div>
           <p className="mt-3 text-xs leading-relaxed text-zinc-600">
-            Hi there, we were introduced by Alex from Meridian. She spoke very highly of your work.
+            Hi there, we were introduced by Alex from Meridian. She spoke highly of your work.
             I&apos;m the CEO at West Bay Ventures (Series B fintech, 60 people). We&apos;ve outgrown our
-            current identity and are launching a new product in 8 weeks. We need a full rebrand...
+            identity and are launching a product in 8 weeks. We need a full rebrand...
           </p>
           <p className="mt-auto pt-3 text-[10px] text-zinc-400">
             Buried under 47 other emails.

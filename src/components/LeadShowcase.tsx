@@ -113,21 +113,21 @@ export default function LeadShowcase() {
             </span>
           </h2>
           <p className="mt-4 max-w-md text-zinc-600">
-            Name, role, service, urgency, budget, location, and meeting intent pulled straight from the
-            email. Every lead gets a confidence score so you know what to trust.
+            Name, role, service, urgency, budget, location, meeting intent. Pulled from the email.
+            Every lead gets a confidence score.
           </p>
           <ul className="mt-6 space-y-2.5 text-sm text-zinc-700">
             <li className="flex items-start gap-2">
               <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-indigo-600" />
-              <span>Real, human-written enquiries. Not lookalikes.</span>
+              <span>Real enquiries from real people. Not lookalikes.</span>
             </li>
             <li className="flex items-start gap-2">
               <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-indigo-600" />
-              <span>Draft reply in your tone, ready before you read the email.</span>
+              <span>Draft reply ready before you read the email.</span>
             </li>
             <li className="flex items-start gap-2">
               <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-indigo-600" />
-              <span>Low-confidence leads flagged for review, not silently misclassified.</span>
+              <span>Low-confidence leads flagged for review, not misclassified.</span>
             </li>
           </ul>
 

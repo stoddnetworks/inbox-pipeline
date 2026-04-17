@@ -12,17 +12,17 @@ interface Step {
 // Condensed to fit a single viewport without cropping.
 const manualSteps: Step[] = [
   { title: 'Open Gmail. 127 unread.', note: 'You scroll. You sigh.' },
-  { title: 'Skim. Miss the hot lead.', note: 'Buried on page 3 under Stripe receipts.' },
-  { title: 'Context-switch to client work.', note: 'You’ll come back to it. Promise.' },
-  { title: '4pm. Tired brain. Tired reply.', note: 'You second-guess the tone twice.' },
-  { title: 'Hit send. Cross fingers.', note: 'Still haven’t written to Sarah or Omar.' },
+  { title: 'Miss the hot lead.', note: 'Buried on page 3 under Stripe receipts.' },
+  { title: 'Context-switch to client work.', note: 'You’ll come back to it.' },
+  { title: '4pm. Tired brain. Tired reply.', note: 'Second-guess the tone twice.' },
+  { title: 'Send. Cross fingers.', note: 'Sarah and Omar still waiting.' },
 ];
 
 const productSteps: Step[] = [
-  { title: 'Open your pipeline.', note: '3 leads already classified.' },
+  { title: 'Open the pipeline.', note: '3 leads classified.' },
   { title: 'Marcus tagged urgent.', note: 'Budget, company, timeline extracted.' },
-  { title: 'Review the draft.', note: 'Warm, specific, in your voice.' },
-  { title: 'Click send. Coffee still warm.', note: 'You have 47 minutes back in your day.' },
+  { title: 'Review the draft.', note: 'In your voice. Specific.' },
+  { title: 'Send. Coffee still warm.', note: '47 minutes back in your day.' },
 ];
 
 export default function MorningComparison() {
@@ -68,10 +68,10 @@ export default function MorningComparison() {
               A solo operator’s morning
             </p>
             <h2 className="mt-1.5 text-2xl font-semibold tracking-tight text-zinc-900 sm:text-3xl">
-              Same inbox. Two very different mornings.
+              Same inbox. Two different mornings.
             </h2>
             <p className="mt-2 text-sm text-zinc-600">
-              Scroll to see the first hour of your day, with and without Inbox Pipeline.
+              The first hour of your day, with and without Inbox Pipeline.
             </p>
           </div>
 
@@ -108,7 +108,7 @@ export default function MorningComparison() {
                   before 9am.
                 </p>
                 <p className="mt-2 text-sm text-indigo-100">
-                  More billable time. Less inbox guilt. A shot at the client you would’ve missed.
+                  More billable time. Less inbox guilt. One more client that didn’t slip away.
                 </p>
               </div>
             </motion.div>
