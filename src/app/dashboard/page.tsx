@@ -194,7 +194,7 @@ export default function DashboardPage() {
               <button
                 onClick={handleSync}
                 disabled={syncing || processing}
-                className="inline-flex items-center gap-2 rounded-lg bg-zinc-900 px-4 py-2.5 text-sm font-medium text-white hover:bg-zinc-800 disabled:opacity-50 transition-colors"
+                className="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm shadow-indigo-600/20 hover:bg-indigo-700 disabled:opacity-50 transition-colors"
               >
                 <RefreshCw className={`h-4 w-4 ${syncing || processing ? 'animate-spin' : ''}`} />
                 {processing ? 'Processing...' : syncing ? 'Syncing...' : 'Sync Inbox'}
@@ -214,7 +214,7 @@ export default function DashboardPage() {
             onClick={() => setFilter('all')}
             className={`inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium transition-colors ${
               filter === 'all'
-                ? 'bg-zinc-900 text-white'
+                ? 'bg-indigo-600 text-white'
                 : 'bg-white border border-zinc-200 text-zinc-600 hover:bg-zinc-50'
             }`}
           >

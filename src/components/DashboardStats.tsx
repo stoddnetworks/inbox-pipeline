@@ -16,7 +16,7 @@ export default function DashboardStats({ leads }: Props) {
   };
 
   const stats = [
-    { label: 'New', count: counts.new, icon: Sparkles, color: 'text-blue-600', bg: 'bg-blue-50' },
+    { label: 'New', count: counts.new, icon: Sparkles, color: 'text-indigo-600', bg: 'bg-indigo-50' },
     { label: 'Replied', count: counts.replied, icon: MessageSquare, color: 'text-amber-600', bg: 'bg-amber-50' },
     { label: 'Booked', count: counts.booked, icon: CalendarCheck, color: 'text-green-600', bg: 'bg-green-50' },
     { label: 'Lost', count: counts.lost, icon: XCircle, color: 'text-zinc-400', bg: 'bg-zinc-50' },

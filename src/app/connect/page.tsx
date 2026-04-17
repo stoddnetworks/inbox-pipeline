@@ -83,7 +83,7 @@ export default function ConnectPage() {
           <button
             onClick={handleConnect}
             disabled={!userId}
-            className="flex w-full items-center justify-center gap-2 rounded-lg bg-zinc-900 px-4 py-3 text-sm font-medium text-white hover:bg-zinc-800 disabled:opacity-50 transition-colors"
+            className="flex w-full items-center justify-center gap-2 rounded-lg bg-indigo-600 px-4 py-3 text-sm font-semibold text-white shadow-sm shadow-indigo-600/20 hover:bg-indigo-700 disabled:opacity-50 transition-colors"
           >
             Connect Gmail
             <ArrowRight className="h-4 w-4" />

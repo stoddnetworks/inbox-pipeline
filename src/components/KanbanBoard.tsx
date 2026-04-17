@@ -10,7 +10,7 @@ interface Props {
 }
 
 const columns: { status: LeadStatus; label: string; accent: string }[] = [
-  { status: 'new', label: 'New', accent: 'border-t-blue-500' },
+  { status: 'new', label: 'New', accent: 'border-t-indigo-500' },
   { status: 'replied', label: 'Replied', accent: 'border-t-amber-500' },
   { status: 'booked', label: 'Booked', accent: 'border-t-green-500' },
   { status: 'lost', label: 'Lost', accent: 'border-t-zinc-400' },

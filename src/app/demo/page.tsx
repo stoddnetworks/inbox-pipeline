@@ -131,16 +131,26 @@ export default function DemoPage() {
       <header className="border-b border-zinc-200 bg-white">
         <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-4">
           <div className="flex items-center gap-2">
-            <Inbox className="h-5 w-5 text-zinc-900" />
+            <div className="flex h-6 w-6 items-center justify-center rounded-md bg-indigo-600">
+              <Inbox className="h-3.5 w-3.5 text-white" />
+            </div>
             <span className="text-base font-semibold text-zinc-900">Inbox Pipeline</span>
           </div>
-          <Link
-            href="/login"
-            className="inline-flex items-center gap-1.5 rounded-md px-2.5 py-1.5 text-sm text-zinc-600 hover:bg-zinc-100 transition-colors"
-          >
-            <LogIn className="h-4 w-4" />
-            Sign in
-          </Link>
+          <div className="flex items-center gap-2">
+            <Link
+              href="/login"
+              className="inline-flex items-center gap-1.5 rounded-md px-2.5 py-1.5 text-sm text-zinc-600 hover:bg-zinc-100 transition-colors"
+            >
+              <LogIn className="h-4 w-4" />
+              Sign in
+            </Link>
+            <Link
+              href="/login"
+              className="inline-flex items-center gap-1.5 rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold text-white hover:bg-indigo-700 transition-colors"
+            >
+              Set up with my Gmail
+            </Link>
+          </div>
         </div>
       </header>
 
@@ -156,7 +166,7 @@ export default function DemoPage() {
           <button
             onClick={handleSync}
             disabled={syncing}
-            className="inline-flex items-center gap-2 rounded-lg bg-zinc-900 px-4 py-2.5 text-sm font-medium text-white hover:bg-zinc-800 disabled:opacity-60 transition-colors self-start sm:self-auto"
+            className="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm shadow-indigo-600/20 hover:bg-indigo-700 disabled:opacity-60 transition-colors self-start sm:self-auto"
           >
             <RefreshCw className={`h-4 w-4 ${syncing ? 'animate-spin' : ''}`} />
             {syncing ? 'Syncing...' : 'Sync Inbox'}
@@ -174,7 +184,7 @@ export default function DemoPage() {
             onClick={() => setFilter('all')}
             className={`inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium transition-colors ${
               filter === 'all'
-                ? 'bg-zinc-900 text-white'
+                ? 'bg-indigo-600 text-white'
                 : 'bg-white border border-zinc-200 text-zinc-600 hover:bg-zinc-50'
             }`}
           >
@@ -203,27 +213,34 @@ export default function DemoPage() {
         />
 
         {/* Footer CTA */}
-        <div className="mt-10 rounded-xl border border-zinc-200 bg-white p-6 text-center">
-          <h2 className="text-base font-semibold text-zinc-900">This but on your actual inbox.</h2>
-          <p className="mt-1 text-sm text-zinc-500 max-w-md mx-auto">
-            Hook up Gmail, click sync, and real enquiries land in the kanban in under a minute. Free and open source.
+        <div className="mt-10 overflow-hidden rounded-2xl border border-indigo-200 bg-gradient-to-br from-indigo-50 via-white to-white p-8 text-center">
+          <h2 className="text-xl font-semibold tracking-tight text-zinc-900 sm:text-2xl">
+            This, but on your actual inbox.
+          </h2>
+          <p className="mt-2 text-sm text-zinc-600 max-w-lg mx-auto sm:text-base">
+            Plug in Gmail, click sync, and real enquiries land in the kanban in under a minute.
+            Open source. Self-hosted. Your data stays with you.
           </p>
-          <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
+          <div className="mt-5 flex flex-col items-center justify-center gap-2 sm:flex-row">
             <Link
               href="/login"
-              className="inline-flex items-center gap-1.5 rounded-lg bg-zinc-900 px-4 py-2 text-sm font-medium text-white hover:bg-zinc-800 transition-colors"
+              className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-lg bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm shadow-indigo-600/20 hover:bg-indigo-700 transition-colors"
             >
+              <Sparkles className="h-4 w-4" />
               Set up with my Gmail
             </Link>
+          </div>
+          <p className="mt-4 text-xs text-zinc-400">
+            Prefer the code?{' '}
             <a
               href="https://github.com/stoddnetworks/inbox-pipeline"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-lg border border-zinc-300 bg-white px-4 py-2 text-sm font-medium text-zinc-700 hover:bg-zinc-50 transition-colors"
+              className="underline decoration-zinc-300 underline-offset-2 hover:text-zinc-600 transition-colors"
             >
-              View on GitHub
+              View the repo on GitHub
             </a>
-          </div>
+          </p>
         </div>
       </main>
 

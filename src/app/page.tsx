@@ -7,7 +7,7 @@ import { isSupabaseConfigured, supabase } from '@/lib/supabase';
 import {
   Inbox, Sparkles, ArrowRight, Mail, Zap, CheckCircle2, Clock,
   Filter, Send, Eye, LayoutGrid, AlertTriangle,
-  Building, DollarSign, MapPin,
+  Building, DollarSign, MapPin, Shield, Code,
 } from 'lucide-react';
 
 export default function LandingPage() {
@@ -45,7 +45,7 @@ export default function LandingPage() {
       <nav className="sticky top-0 z-40 border-b border-zinc-200/80 bg-white/85 backdrop-blur">
         <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4">
           <div className="flex items-center gap-2">
-            <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-zinc-900">
+            <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-indigo-600">
               <Inbox className="h-4 w-4 text-white" />
             </div>
             <span className="text-sm font-semibold tracking-tight">Inbox Pipeline</span>
@@ -55,12 +55,12 @@ export default function LandingPage() {
               href="/demo"
               className="hidden sm:inline-flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm text-zinc-600 hover:text-zinc-900 transition-colors"
             >
-              <Sparkles className="h-3.5 w-3.5 text-blue-600" />
+              <Sparkles className="h-3.5 w-3.5 text-indigo-600" />
               Try the demo
             </Link>
             <Link
               href="/login"
-              className="inline-flex items-center gap-1.5 rounded-md bg-zinc-900 px-3 py-1.5 text-sm font-medium text-white hover:bg-zinc-800 transition-colors"
+              className="inline-flex items-center gap-1.5 rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-indigo-700 transition-colors"
             >
               Get started
               <ArrowRight className="h-3.5 w-3.5" />
@@ -71,29 +71,29 @@ export default function LandingPage() {
 
       {/* HERO */}
       <section className="relative overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-blue-50/40 via-white to-white" />
-        <div className="pointer-events-none absolute -top-24 left-1/2 h-[500px] w-[900px] -translate-x-1/2 rounded-full bg-gradient-to-br from-blue-200/30 via-transparent to-transparent blur-3xl" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-indigo-50/50 via-white to-white" />
+        <div className="pointer-events-none absolute -top-24 left-1/2 h-[520px] w-[960px] -translate-x-1/2 rounded-full bg-gradient-to-br from-indigo-300/30 via-transparent to-transparent blur-3xl" />
 
         <div className="relative mx-auto max-w-6xl px-4 pt-16 pb-12 sm:pt-24 sm:pb-16">
           <div className="mx-auto max-w-3xl text-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white px-3 py-1 text-xs font-medium text-zinc-600 shadow-sm">
-              <span className="flex h-1.5 w-1.5 rounded-full bg-green-500" />
-              Free. Open source. Works with your Gmail.
+            <div className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-white px-3 py-1 text-xs font-medium text-indigo-700 shadow-sm">
+              <span className="flex h-1.5 w-1.5 rounded-full bg-indigo-500" />
+              Open source. Self-hosted. Runs on your own Gmail.
             </div>
             <h1 className="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
               Your inbox is killing <br className="hidden sm:block" />
-              <span className="bg-gradient-to-br from-zinc-900 via-zinc-700 to-zinc-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-br from-indigo-700 via-indigo-500 to-zinc-900 bg-clip-text text-transparent">
                 your pipeline.
               </span>
             </h1>
             <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-zinc-600 sm:text-lg">
-              Real enquiries get buried under newsletters and noise. By the time you reply, they&apos;ve hired someone else.
-              Inbox Pipeline fixes that in about ten minutes.
+              Real enquiries get buried under newsletters and noise. By the time you reply,
+              they&apos;ve hired someone else. Inbox Pipeline fixes that in about ten minutes.
             </p>
             <div className="mt-7 flex flex-col items-center justify-center gap-2 sm:flex-row">
               <Link
                 href="/demo"
-                className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-lg bg-zinc-900 px-5 py-2.5 text-sm font-medium text-white hover:bg-zinc-800 transition-colors"
+                className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-lg bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm shadow-indigo-600/20 hover:bg-indigo-700 transition-colors"
               >
                 <Sparkles className="h-4 w-4" />
                 See it in action
@@ -107,7 +107,7 @@ export default function LandingPage() {
               </Link>
             </div>
             <p className="mt-4 text-xs text-zinc-400">
-              No credit card. No subscription. You approve every reply.
+              Bring your own Supabase, Claude, and Gmail keys. You approve every reply.
             </p>
           </div>
 
@@ -116,24 +116,29 @@ export default function LandingPage() {
             <HeroVisual />
           </div>
 
-          {/* Quick proof strip */}
+          {/* Proof strip */}
           <div className="mx-auto mt-10 grid max-w-4xl grid-cols-1 gap-3 sm:grid-cols-3">
             <Proof label="Setup time" value="~10 min" />
             <Proof label="You approve every send" value="100%" />
-            <Proof label="What it costs" value="£0" />
+            <Proof label="Your data stays with you" value="Self-hosted" />
           </div>
         </div>
       </section>
 
-      {/* PROBLEM */}
+      {/* ICP / WHO THIS IS FOR */}
       <section className="border-t border-zinc-100 bg-zinc-50/60 py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-4">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-              You didn&apos;t start freelancing to triage email.
+            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-indigo-600">
+              If you recognise yourself
+            </p>
+            <h2 className="mt-2 text-2xl font-semibold tracking-tight sm:text-3xl">
+              You freelance. Enquiries pay the bills.
             </h2>
             <p className="mt-3 text-zinc-600">
-              If your pipeline lives in your inbox, you already have a pipeline problem.
+              You&apos;re a photographer, consultant, designer, coach, or small-agency owner.
+              You don&apos;t have a sales team. You have a laptop, a client list, and an inbox
+              that&apos;s slowly eating your week.
             </p>
           </div>
 
@@ -141,12 +146,12 @@ export default function LandingPage() {
             <PainCard
               icon={Mail}
               title="Enquiries get buried"
-              body="Real leads sit next to newsletters, invoices, and cold outreach. You&apos;ll get to them. Eventually."
+              body="Real leads sit next to invoices, newsletters, and cold outreach. You&apos;ll get to them. Eventually."
             />
             <PainCard
               icon={Clock}
               title="Good leads go cold"
-              body="The email you meant to reply to on Tuesday is still sitting there on Friday. By Monday they&apos;ve gone with someone else."
+              body="The email you meant to reply to on Tuesday is still sitting there on Friday. By Monday they&apos;ve hired someone else."
             />
             <PainCard
               icon={LayoutGrid}
@@ -161,7 +166,7 @@ export default function LandingPage() {
       <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-6xl px-4">
           <div className="mx-auto max-w-2xl text-center">
-            <p className="text-xs font-medium uppercase tracking-[0.15em] text-blue-600">
+            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-indigo-600">
               How it works
             </p>
             <h2 className="mt-2 text-2xl font-semibold tracking-tight sm:text-3xl">
@@ -173,7 +178,7 @@ export default function LandingPage() {
             <StepCard
               number="01"
               title="Connect Gmail"
-              body="One OAuth click. Read your inbox, send your replies. Ten minutes, done."
+              body="One OAuth click. Read your inbox, send your replies. Ten minutes and you&apos;re running."
               icon={Mail}
             />
             <StepCard
@@ -186,7 +191,7 @@ export default function LandingPage() {
             <StepCard
               number="03"
               title="You hit send"
-              body="Every draft lands in a clean kanban board. Edit, ignore, or send in one click. Nothing goes out without you."
+              body="Drafts land in a clean kanban. Edit, ignore, or send in one click. Nothing goes out without you."
               icon={Send}
             />
           </div>
@@ -240,58 +245,85 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* WHO IT'S FOR */}
+      {/* PRICING / HOW IT WORKS FINANCIALLY */}
       <section className="py-16 sm:py-20">
-        <div className="mx-auto max-w-6xl px-4">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-              If you run a team of one, this is for you.
+        <div className="mx-auto max-w-4xl px-4">
+          <div className="text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-indigo-600">
+              Pricing
+            </p>
+            <h2 className="mt-2 text-2xl font-semibold tracking-tight sm:text-3xl">
+              Open source. You pay nothing to us.
             </h2>
             <p className="mt-3 text-zinc-600">
-              Inbox Pipeline is built for solo service businesses whose next client is sitting in their inbox right now.
+              There&apos;s no subscription because there&apos;s no service company. You host it. You run it.
             </p>
           </div>
 
-          <div className="mx-auto mt-10 flex max-w-3xl flex-wrap items-center justify-center gap-2">
-            {[
-              'Freelance designers',
-              'Independent consultants',
-              'Wedding photographers',
-              'Executive coaches',
-              'Brand strategists',
-              'Small agency owners',
-              'Copywriters',
-              'Web developers',
-              'Videographers',
-              'Architects',
-            ].map(label => (
-              <span
-                key={label}
-                className="rounded-full border border-zinc-200 bg-white px-3.5 py-1.5 text-sm text-zinc-700 shadow-sm"
+          <div className="mt-10 rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm sm:p-8">
+            <div className="flex items-start gap-3">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-indigo-50">
+                <Code className="h-5 w-5 text-indigo-600" />
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-zinc-900">Self-hosted. Bring your own keys.</h3>
+                <p className="mt-1 text-sm text-zinc-600">
+                  Clone the repo, plug in three API keys, and you&apos;re running. Your data stays in your accounts.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-6 grid gap-3 sm:grid-cols-3">
+              <CostRow label="Vercel (hosting)" cost="Free tier" note="Hobby plan covers solo use" />
+              <CostRow label="Supabase (database)" cost="Free tier" note="500MB + 50k users" />
+              <CostRow label="Claude API (the brain)" cost="~£2 to £8/mo" note="Based on your inbox volume" />
+            </div>
+
+            <p className="mt-6 text-sm leading-relaxed text-zinc-500">
+              Real math: if you get 20 business enquiries a month, Claude classification and drafting
+              costs you under a pound. Heavy inboxes with 200+ enquiries land around £8. You only pay
+              for what you actually use, directly to the provider.
+            </p>
+
+            <div className="mt-6 flex flex-wrap gap-2">
+              <Link
+                href="/demo"
+                className="inline-flex items-center gap-1.5 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm shadow-indigo-600/20 hover:bg-indigo-700 transition-colors"
               >
-                {label}
-              </span>
-            ))}
+                <Sparkles className="h-3.5 w-3.5" />
+                Try the demo first
+              </Link>
+              <a
+                href="https://github.com/stoddnetworks/inbox-pipeline"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-lg border border-zinc-300 bg-white px-4 py-2 text-sm font-medium text-zinc-700 hover:bg-zinc-50 transition-colors"
+              >
+                <Code className="h-3.5 w-3.5" />
+                Setup instructions
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
       {/* FINAL CTA */}
       <section className="relative overflow-hidden border-t border-zinc-100 bg-zinc-900 py-20 text-white">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(96,165,250,0.15),transparent_60%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(129,140,248,0.2),transparent_60%)]" />
         <div className="relative mx-auto max-w-3xl px-4 text-center">
           <h2 className="text-2xl font-semibold tracking-tight sm:text-4xl">
             Your next client is already in your inbox.
           </h2>
           <p className="mt-4 text-zinc-300">
-            Don&apos;t make them wait. Try the demo with sample data, then hook up your Gmail and watch it work on your real inbox.
+            Don&apos;t make them wait. Try the demo with sample data, then hook up Gmail and watch it
+            work on your real enquiries.
           </p>
           <div className="mt-7 flex flex-col items-center justify-center gap-2 sm:flex-row">
             <Link
               href="/demo"
-              className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-lg bg-white px-5 py-2.5 text-sm font-medium text-zinc-900 hover:bg-zinc-100 transition-colors"
+              className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-lg bg-indigo-500 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 transition-colors"
             >
-              <Sparkles className="h-4 w-4 text-blue-600" />
+              <Sparkles className="h-4 w-4" />
               See it in action
             </Link>
             <Link
@@ -307,14 +339,26 @@ export default function LandingPage() {
 
       {/* FOOTER */}
       <footer className="border-t border-zinc-200 bg-white py-8">
-        <div className="mx-auto flex max-w-6xl flex-col items-center gap-2 px-4 text-sm text-zinc-500 sm:flex-row sm:justify-between">
+        <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-4 text-sm text-zinc-500 sm:flex-row sm:justify-between">
           <div className="flex items-center gap-1.5">
-            <Inbox className="h-4 w-4 text-zinc-400" />
-            <span>Inbox Pipeline</span>
+            <div className="flex h-5 w-5 items-center justify-center rounded bg-indigo-600">
+              <Inbox className="h-3 w-3 text-white" />
+            </div>
+            <span className="font-medium text-zinc-700">Inbox Pipeline</span>
           </div>
-          <p>
-            For solo operators who have better things to do than triage email.
-          </p>
+          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+            <Link href="/privacy" className="hover:text-zinc-900 transition-colors">Privacy</Link>
+            <Link href="/terms" className="hover:text-zinc-900 transition-colors">Terms</Link>
+            <a
+              href="https://github.com/stoddnetworks/inbox-pipeline"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 hover:text-zinc-900 transition-colors"
+            >
+              <Code className="h-3.5 w-3.5" />
+              GitHub
+            </a>
+          </div>
         </div>
       </footer>
     </div>
@@ -325,7 +369,7 @@ export default function LandingPage() {
 
 function HeroVisual() {
   return (
-    <div className="relative rounded-2xl border border-zinc-200 bg-white p-4 shadow-xl shadow-zinc-900/5 sm:p-6">
+    <div className="relative rounded-2xl border border-zinc-200 bg-white p-4 shadow-xl shadow-indigo-900/5 sm:p-6">
       <div className="grid gap-4 sm:grid-cols-[1fr_auto_1fr] sm:items-stretch">
         {/* Left: raw email */}
         <div className="flex flex-col rounded-lg border border-zinc-200 bg-zinc-50 p-4">
@@ -339,7 +383,9 @@ function HeroVisual() {
             <p className="font-semibold text-zinc-800">Rebrand engagement, need to move quickly</p>
           </div>
           <p className="mt-3 text-xs leading-relaxed text-zinc-600">
-            Hi there, we were introduced by Alex from Meridian. She spoke very highly of your work. I&apos;m the CEO at West Bay Ventures (Series B fintech, 60 people). We&apos;ve outgrown our current identity and are launching a new product in 8 weeks. We need a full rebrand...
+            Hi there, we were introduced by Alex from Meridian. She spoke very highly of your work.
+            I&apos;m the CEO at West Bay Ventures (Series B fintech, 60 people). We&apos;ve outgrown our
+            current identity and are launching a new product in 8 weeks. We need a full rebrand...
           </p>
           <p className="mt-auto pt-3 text-[10px] text-zinc-400">
             Buried under 47 other emails.
@@ -348,9 +394,9 @@ function HeroVisual() {
 
         {/* Divider / AI badge */}
         <div className="flex items-center justify-center sm:flex-col sm:justify-center">
-          <div className="flex items-center gap-1.5 rounded-full border border-zinc-200 bg-white px-3 py-1.5 shadow-sm">
-            <Sparkles className="h-3.5 w-3.5 text-blue-600" />
-            <span className="text-xs font-medium text-zinc-700">Claude</span>
+          <div className="flex items-center gap-1.5 rounded-full border border-indigo-200 bg-indigo-50 px-3 py-1.5 shadow-sm">
+            <Sparkles className="h-3.5 w-3.5 text-indigo-600" />
+            <span className="text-xs font-medium text-indigo-700">Claude</span>
           </div>
         </div>
 
@@ -367,7 +413,7 @@ function HeroVisual() {
           </div>
 
           <p className="mt-2.5 text-xs font-medium text-zinc-800">
-            Brand strategy + full rebrand
+            Brand strategy and full rebrand
           </p>
 
           <div className="mt-2 flex flex-wrap gap-1.5">
@@ -377,18 +423,19 @@ function HeroVisual() {
             <Tag icon={Clock}>8-week launch</Tag>
           </div>
 
-          <div className="mt-3 rounded-md border border-blue-100 bg-blue-50/50 p-2.5">
-            <div className="flex items-center gap-1 text-[10px] font-medium uppercase tracking-[0.08em] text-blue-700">
+          <div className="mt-3 rounded-md border border-indigo-100 bg-indigo-50/60 p-2.5">
+            <div className="flex items-center gap-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-indigo-700">
               <Sparkles className="h-2.5 w-2.5" />
               Drafted reply
             </div>
             <p className="mt-1 text-xs leading-relaxed text-zinc-700">
-              Hi Marcus, thanks for reaching out, and please pass my thanks to Alex. 8 weeks is tight but doable for a focused engagement...
+              Hi Marcus, thanks for reaching out, and please pass my thanks to Alex. 8 weeks is tight
+              but doable for a focused engagement...
             </p>
           </div>
 
           <div className="mt-3 flex items-center justify-between">
-            <button className="pointer-events-none inline-flex items-center gap-1 rounded-md bg-blue-600 px-2 py-1 text-[10px] font-medium text-white">
+            <button className="pointer-events-none inline-flex items-center gap-1 rounded-md bg-indigo-600 px-2 py-1 text-[10px] font-semibold text-white">
               <Send className="h-2.5 w-2.5" />
               Send reply
             </button>
@@ -403,7 +450,7 @@ function HeroVisual() {
 function Proof({ label, value }: { label: string; value: string }) {
   return (
     <div className="rounded-lg border border-zinc-200 bg-white px-4 py-3 text-center shadow-sm">
-      <p className="text-lg font-semibold tracking-tight text-zinc-900">{value}</p>
+      <p className="text-base font-semibold tracking-tight text-zinc-900 sm:text-lg">{value}</p>
       <p className="mt-0.5 text-xs text-zinc-500">{label}</p>
     </div>
   );
@@ -447,30 +494,30 @@ function StepCard({
     <div
       className={`relative rounded-2xl border p-6 transition-colors ${
         highlight
-          ? 'border-zinc-900 bg-zinc-900 text-white'
+          ? 'border-indigo-600 bg-indigo-600 text-white shadow-lg shadow-indigo-600/20'
           : 'border-zinc-200 bg-white text-zinc-900'
       }`}
     >
       <div className="flex items-center justify-between">
         <span
-          className={`text-xs font-medium ${
-            highlight ? 'text-blue-300' : 'text-zinc-400'
+          className={`text-xs font-semibold ${
+            highlight ? 'text-indigo-200' : 'text-zinc-400'
           }`}
         >
           {number}
         </span>
         <div
           className={`flex h-8 w-8 items-center justify-center rounded-lg ${
-            highlight ? 'bg-white/10' : 'bg-zinc-100'
+            highlight ? 'bg-white/15' : 'bg-indigo-50'
           }`}
         >
-          <Icon className={`h-4 w-4 ${highlight ? 'text-white' : 'text-zinc-700'}`} />
+          <Icon className={`h-4 w-4 ${highlight ? 'text-white' : 'text-indigo-600'}`} />
         </div>
       </div>
       <h3 className="mt-4 text-lg font-semibold">{title}</h3>
       <p
         className={`mt-2 text-sm leading-relaxed ${
-          highlight ? 'text-zinc-300' : 'text-zinc-600'
+          highlight ? 'text-indigo-50' : 'text-zinc-600'
         }`}
       >
         {body}
@@ -482,11 +529,21 @@ function StepCard({
 function Feature({ icon: Icon, title, body }: { icon: React.ComponentType<{ className?: string }>; title: string; body: string }) {
   return (
     <div className="rounded-xl border border-zinc-200 bg-white p-5">
-      <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-50">
-        <Icon className="h-4 w-4 text-blue-600" />
+      <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-50">
+        <Icon className="h-4 w-4 text-indigo-600" />
       </div>
       <h3 className="mt-3 text-sm font-semibold text-zinc-900">{title}</h3>
       <p className="mt-1 text-sm leading-relaxed text-zinc-600">{body}</p>
+    </div>
+  );
+}
+
+function CostRow({ label, cost, note }: { label: string; cost: string; note: string }) {
+  return (
+    <div className="rounded-lg border border-zinc-200 bg-zinc-50 p-3">
+      <p className="text-xs text-zinc-500">{label}</p>
+      <p className="mt-1 text-sm font-semibold text-zinc-900">{cost}</p>
+      <p className="mt-0.5 text-[11px] text-zinc-500">{note}</p>
     </div>
   );
 }

@@ -73,7 +73,7 @@ export default function LeadDetail({
               <button
                 onClick={handleSend}
                 disabled={sending || !latestDraft}
-                className="inline-flex items-center gap-1.5 rounded-md bg-blue-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-blue-700 disabled:opacity-50 transition-colors"
+                className="inline-flex items-center gap-1.5 rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-indigo-700 disabled:opacity-50 transition-colors"
               >
                 <Send className="h-3.5 w-3.5" />
                 {sending ? 'Sending...' : 'Send Reply'}
@@ -175,7 +175,7 @@ export default function LeadDetail({
               <textarea
                 value={draftBody}
                 onChange={e => setDraftBody(e.target.value)}
-                className="w-full rounded-md border border-zinc-200 bg-white p-3 text-sm text-zinc-700 leading-relaxed focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-y"
+                className="w-full rounded-md border border-zinc-200 bg-white p-3 text-sm text-zinc-700 leading-relaxed focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent resize-y"
                 rows={6}
               />
             ) : (
@@ -183,7 +183,7 @@ export default function LeadDetail({
                 <p className="text-sm text-zinc-400">No draft available</p>
                 <button
                   onClick={handleRegenerate}
-                  className="mt-2 text-sm text-blue-600 hover:text-blue-700"
+                  className="mt-2 text-sm text-indigo-600 hover:text-indigo-700"
                 >
                   Generate a draft
                 </button>

@@ -11,7 +11,7 @@ interface Props {
 
 const urgencyColors: Record<string, string> = {
   low: 'bg-zinc-100 text-zinc-600',
-  medium: 'bg-blue-100 text-blue-700',
+  medium: 'bg-indigo-100 text-indigo-700',
   high: 'bg-orange-100 text-orange-700',
   urgent: 'bg-red-100 text-red-700',
 };
